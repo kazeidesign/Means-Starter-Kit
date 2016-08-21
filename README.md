@@ -1,5 +1,5 @@
-# MEAN-Sails-stack
-
+# MEAN-Sails-Starter-Kit
+<!--
 MEAN stack with Sails.js = <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, <a href="http://sailsjs.org" target="_blank">Sails.js(Express.js)</a>, <a href="https://angularjs.org/" target="_blank">Angular.js 1.5+</a> and <a href="https://nodejs.org/en/" target="_blank">Node.js</a>.
 
 ## Ready to use
@@ -50,7 +50,7 @@ angular.module('myApp.view1', ['ngRoute', 'sailsResource'])
 .controller('View1Ctrl', function ($rootScope, sailsResource) {
   var self = this;
   var item = sailsResource('Item');
-  
+
   this.itemResource = item;
   this.itemForm = new item();
   this.itemTypes = item.query();
@@ -65,31 +65,31 @@ angular.module('myApp.view1', ['ngRoute', 'sailsResource'])
   this.cancel = function () {
     self.itemForm = new item();
   };
-  
+
   this.deleteItem = function (item) {
     item.$delete();
   };
-  
+
   this.editItem = function (item) {
     item.$editing = true;
   };
-  
+
   this.saveItem = function (item) {
     item.$save();
     item.$editing = false;
   };
-  
+
   this.checkItemCompleted = function (item){
     item.status = "completed";
     item.$save();
   };
-  
+
   this.checkItemToDo = function (item){
     item.status = "To do";
     item.$save();
   };
-  
-  this.causeError = function () { 
+
+  this.causeError = function () {
     item.notFound(
       function (response) {
       },
@@ -97,15 +97,15 @@ angular.module('myApp.view1', ['ngRoute', 'sailsResource'])
         self.error = response.statusCode;
       });
   };
-  
+
   $rootScope.$on('$sailsResourceCreated', function () {
     self.created++;
   });
-  
+
   $rootScope.$on('$sailsResourceUpdated', function () {
     self.updated++;
   });
-  
+
   $rootScope.$on('$sailsResourceDestroyed', function () {
     self.destroyed++;
   });
@@ -116,8 +116,8 @@ angular.module('myApp.view1', ['ngRoute', 'sailsResource'])
 
 ### Example
 
- #### To do 
- 
+ #### To do
+
 <a href="http://kazeidesign.github.io/Means-To-Do/" target="_blank"><img src="https://raw.githubusercontent.com/kazeidesign/Means-To-Do/gh-pages/images/Means-To-Do-screenshot.png" alt=""><br><br>
 Means-To-Do: http://kazeidesign.github.io/Means-To-Do/
 </a>
@@ -147,4 +147,4 @@ Enjoy!
 * [grunt-scss-lint](https://github.com/ahmednuaman/grunt-scss-lint)
 * [grunt-sass-lint](https://github.com/sasstools/grunt-sass-lint)
 * [grunt-postcss](https://github.com/nDmitry/grunt-postcss)
-
+-->
